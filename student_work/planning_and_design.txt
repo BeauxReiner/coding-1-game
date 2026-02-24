@@ -11,12 +11,15 @@ Part I: Planning & Design (15 pts)
 * Outline expansion ideas
 
 Game Idea:
-
+Dinosaur Game
 
 Game Rules:
-
+Don't hit the obstacles and don't die
 
 Major Game Elements:
-
+jump
+random obstacles
+score
 
 Gameplay Process:
+you press space to jump over randomly generated obstacles
