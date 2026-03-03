@@ -6,10 +6,13 @@ Part I: Planning & Design (15 pts)
 * Sketch a simple plan showing how the game will work step-by-step
 * Identify which icons you are going to use and get the unicode for those icons
 * Determine your board size
+50 x 10
 * Determine your scoring system
+every millisecond you earn one point
 * Determine win / lose conditions
+no winning but hit an obstacle and you lose
 * Outline expansion ideas
-
+different lengths of obstacles and possibly ducking
 Game Idea:
 Dinosaur Game
 
