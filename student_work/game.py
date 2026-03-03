@@ -37,6 +37,11 @@ def draw_board(stdscr):
 
     stdscr.refresh()
 
+def screenMove():
+    for item in game_data['obstacles']:
+        game_data[item]['x']-1
+
+
 def move_player(key):
     x = game_data['player']['x']
     y = game_data['player']['y']
@@ -70,7 +75,7 @@ def main(stdscr):
     draw_board(stdscr)
 
     while True:
-        
+        screenMove()
         draw_board(stdscr)
         time.sleep(1)
 
