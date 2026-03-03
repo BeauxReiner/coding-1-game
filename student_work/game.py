@@ -1,5 +1,6 @@
 # Write your game here
 import curses
+import time
 game_data = {
     'width': 12,
     'height': 3,
