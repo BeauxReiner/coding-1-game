@@ -70,17 +70,9 @@ def main(stdscr):
     draw_board(stdscr)
 
     while True:
-        try:
-            key = stdscr.getkey()
-        except:
-            key = None
-
-        if key:
-            if key.lower() == "q":
-                break
-
-            move_player(key)
-            draw_board(stdscr)
+        
+        draw_board(stdscr)
+        time.sleep(1)
 
 curses.wrapper(main)
     
