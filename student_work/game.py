@@ -6,8 +6,8 @@ game_data = {
     'height': 3,
     'player': {"x": 0, "y": 2, "score": 0},
     'obstacles': [
-        {"x": 1, "y": 2},
-        {"x": 3, "y": 2}
+        {"x": 5, "y": 2},
+        {"x": 6, "y": 2}
     ],
 
     # ASCII icons
@@ -49,14 +49,8 @@ def move_player(key):
     new_x, new_y = x, y
     key = key.lower()
 
-    if key == "w" and y > 0:
+    if key == " " and y > 0:
         new_y -= 1
-    elif key == "s" and y < game_data['height'] - 1:
-        new_y += 1
-    elif key == "a" and x > 0:
-        new_x -= 1
-    elif key == "d" and x < game_data['width'] - 1:
-        new_x += 1
     else:
         return  # Invalid key or move off board
     # Check for obstacles
@@ -75,7 +69,19 @@ def main(stdscr):
     draw_board(stdscr)
 
     while True:
+        try:
+            key = stdscr.getkey()
+        except:
+            key = None
+
+        if key:
+            if key.lower() == "q":
+                break
+            move_player(key)
+
         screenMove()
+
+
         draw_board(stdscr)
         time.sleep(1)
 
