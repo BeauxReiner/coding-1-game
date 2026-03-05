@@ -1,6 +1,7 @@
 # Write your game here
 import curses
 import time
+loop_increase = 0
 game_data = {
     'width': 12,
     'height': 3,
@@ -50,7 +51,9 @@ def move_player(key):
     key = key.lower()
 
     if key == " " and y > 0:
+        loop_increase = 0
         new_y -= 1
+
     else:
         return  # Invalid key or move off board
     # Check for obstacles
@@ -68,21 +71,25 @@ def main(stdscr):
 
     draw_board(stdscr)
 
+    
     while True:
-        try:
-            key = stdscr.getkey()
-        except:
-            key = None
+        for i in range(0,2):
+            try:
+                key = stdscr.getkey()
+            except:
+                key = None
 
-        if key:
-            if key.lower() == "q":
-                break
-            move_player(key)
+            if key:
+                if key.lower() == "q":
+                    break
+                move_player(key)
 
-        screenMove()
+            screenMove()
 
-
+        if i == 2:
+            game_data["player"]["y"] = 2
         draw_board(stdscr)
+            
         time.sleep(1)
 
 curses.wrapper(main)
