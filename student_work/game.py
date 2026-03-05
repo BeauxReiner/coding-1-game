@@ -39,7 +39,7 @@ def draw_board(stdscr):
 
 def screenMove():
     for item in game_data['obstacles']:
-        game_data[item]['x']-1
+        item['x'] -= 1
 
 
 def move_player(key):
